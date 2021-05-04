@@ -29,10 +29,37 @@
 
 <script>
 pannellum.viewer('panorama', {
-    "type": "equirectangular",
-    "panorama": "./surroundings.jpg",
+    "default": {
+        "firstScene": "surroundings",
+        "sceneFadeDuration": 1000
+    },
+    "scenes" : {
+        "surroundings" : { 
+            "title": "Vue aérienne",
+            "hfov" : 100,
+            "type": "equirectangular",
+        "panorama": "./surroundings.jpg",
+        "hotSpots": [
+                {
+                    "pitch": 9.55,
+                    "yaw": -46,
+                    "type": "scene",
+                    "text": "Cocoon Village",
+                    "sceneId": "cocoon"
+                }
+            ]
+        },
+        "cocoon" : {
+            "title": "Cocoon Village",
+            "hfov" : 100,
+            "type": "equirectangular",
+            "panorama": "./cocoon.jpg",
+
+        }
+    },
+    
     "autoLoad": true,
-    "hotSpotDebug": true
+    "hotSpotDebug": false
 });
 </script>
 
